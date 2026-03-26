@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #e0e0e0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MAIN CONTAINER */
+.container {
+  display: flex;
+  width: 850px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* LEFT PANEL */
+.left-panel {
+  flex: 1;
+  background: #f4f6fb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-panel img {
+  width: 200px;
+}
+
+.left-panel h2 {
+  margin-top: 20px;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+  flex: 1;
+  padding: 30px;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.tabs span {
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+.tabs .active {
+  border-bottom: 2px solid red;
+}
+
+/* FORM */
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form.active {
+  display: flex;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* PASSWORD FIELD */
+.password-field {
+  position: relative;
+}
+
+.password-field i {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  cursor: pointer;
+}
+
+/* BUTTON */
+button {
+  padding: 10px;
+  border: none;
+  background: #b33;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #922;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .left-panel {
+    display: none;
+  }
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+
+/*  Already have an account? Login */
+.switch-text {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.switch-text span {
+    color: #b33;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.switch-text span:hover {
+    text-decoration: underline;
+}
