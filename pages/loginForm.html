@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuantityMeasurementApp</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style/loginStyle.css" />
+
+    <!-- Font Awesome (for eye icon) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- LEFT SIDE -->
+      <div class="left-panel">
+        <img src="../assests/image.webp" alt="shopping" />
+        <h2>QuantityMeasurementApp</h2>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="right-panel">
+        <!-- Tabs -->
+        <div class="tabs">
+          <span id="loginTab">LOGIN</span>
+          <span id="signupTab" class="active">SIGNUP</span>
+        </div>
+        <!---Signup-->
+        <form class="form active" id="signupForm">
+          <div class="form-group">
+            <input type="text" placeholder="Full Name" required />
+          </div>
+
+          <div class="form-group">
+            <input type="email" placeholder="Email Id" required />
+          </div>
+
+          <div class="form-group password-field">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
+          </div>
+
+          <div class="form-group">
+            <input type="text" placeholder="Mobile Number" required />
+          </div>
+
+          <button type="submit">Signup</button>
+
+          <p class="switch-text">
+            Already have an account?
+            <span id="goToLogin">Login</span>
+          </p>
+        </form>
+
+        <!-- Login Form -->
+        <form class="form" id="loginForm">
+          <input type="email" placeholder="Email Id" required />
+          <br />
+
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+          <p class="switch-text">
+            Don’t have an account?
+            <span id="goToSignup">Sign up</span>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="../script/loginScript.js"></script>
+  </body>
+</html>
