@@ -33,7 +33,6 @@ import ProtectedRoute from "../components/layout/ProtectedRoute";
  * - This is the "Catch-All." The asterisk (*) means "any other URL."
  * - If a user types a random URL like /apple, the app shows the <NotFound /> (404) page.
  *
- *
  * The Flow Summary
  *
  * User types myapp.com/dashboard in the browser.
