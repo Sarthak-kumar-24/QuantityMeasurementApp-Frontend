@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- TITLE -->
+    <title>Quantity Measurement App</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- GOOGLE FONT (clean UI like your design) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME (icons like ruler, weight, temp etc.) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- GLOBAL STYLES (base reset for smooth UI) -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #f2f4f8;
+        color: #333;
+      }
+
+      /* Smooth rendering */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Prevent weird mobile zoom */
+      input,
+      select,
+      textarea,
+      button {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- React Root -->
+    <div id="root"></div>
+
+    <!-- React Entry -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
