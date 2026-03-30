@@ -73,8 +73,8 @@ apiClient.interceptors.request.use(
 /*
  *  RESPONSE INTERCEPTOR
  * Handle global errors:
- * - 401 Unauthorized → clear token and redirect to login
- * - Other errors → propagate to caller
+ * - 401 Unauthorized -> clear token and redirect to login
+ * - Other errors -> propagate to caller
  */
 apiClient.interceptors.response.use(
   (response) => response,
