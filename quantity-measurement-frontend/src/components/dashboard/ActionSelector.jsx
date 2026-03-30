@@ -11,6 +11,7 @@ const actions = [
   { key: "arithmetic", label: "Arithmetic" },
 ];
 
+
 /**
  * 2. Component Props:
  * - selectedAction: The key of the currently active button.

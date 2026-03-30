@@ -17,6 +17,7 @@ const types = [
   { key: "volume", icon: "fa-flask", label: "Volume" },
 ];
 
+
 const TypeSelector = ({ selectedType, onSelect }) => {
   return (
     <div className="type-container">

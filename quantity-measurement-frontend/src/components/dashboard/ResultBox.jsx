@@ -14,6 +14,7 @@ import React from "react";
  * 6 decimal places and stripping unnecessary trailing zeros using parseFloat().
  */
 
+
 const ResultBox = ({ result, action, arithmeticOp }) => {
   if (!result) {
     return (

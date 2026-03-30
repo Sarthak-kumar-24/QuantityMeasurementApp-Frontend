@@ -10,6 +10,7 @@ import React from "react";
  * 3. Purpose: It is typically placed between two input fields to show the mathematical
  * operation currently being performed (like +, -, or /).
  */
+
 const OperatorBox = ({ visible, symbol = "+" }) => {
   if (!visible) return null;
 
