@@ -1,0 +1,218 @@
+/* ===========================
+   GLOBAL RESET
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+.auth-container {
+  display: flex;
+  height: 100vh;
+  background: #eef1f5;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===========================
+   CARD / BOX
+=========================== */
+.auth-box {
+  display: flex;
+  width: 900px;
+  height: 450px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   LEFT SECTION
+=========================== */
+.auth-left {
+  width: 50%;
+  background: #f4f6f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-left img {
+  width: 160px;
+  margin-bottom: 15px;
+}
+
+.auth-left h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* ===========================
+   RIGHT SECTION
+=========================== */
+.auth-right {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===========================
+   TABS (LOGIN / SIGNUP)
+=========================== */
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 25px;
+}
+
+.auth-tabs span {
+  cursor: pointer;
+  padding-bottom: 5px;
+  color: #777;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.auth-tabs span:hover {
+  color: #e74c3c;
+}
+
+.auth-tabs .active {
+  border-bottom: 2px solid #e74c3c;
+  color: #000;
+}
+
+/* ===========================
+   FORM
+=========================== */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-container input {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.form-container input:focus {
+  border-color: #e74c3c;
+  outline: none;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.2);
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+.auth-btn {
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background: #a93226;
+}
+
+.auth-btn.signup {
+  background: #c0392b;
+}
+
+/* ===========================
+   SWITCH TEXT
+=========================== */
+.switch-text {
+  margin-top: 12px;
+  font-size: 13px;
+  text-align: center;
+  color: #555;
+}
+
+.switch-text span {
+  color: #c0392b;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ===========================
+   ERROR MESSAGE
+=========================== */
+.error {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* ===========================
+   TABLET RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .auth-box {
+    width: 95%;
+  }
+}
+
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .auth-box {
+    flex-direction: column;
+    height: auto;
+    width: 95%;
+  }
+
+  .auth-left {
+    display: none;
+  }
+
+  .auth-right {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .auth-tabs {
+    gap: 20px;
+  }
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+@media (max-width: 480px) {
+  .auth-right {
+    padding: 20px;
+  }
+
+  .form-container input {
+    padding: 10px;
+  }
+
+  .auth-btn {
+    padding: 10px;
+  }
+}

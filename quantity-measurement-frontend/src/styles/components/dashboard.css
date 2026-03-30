@@ -1,0 +1,192 @@
+/* TYPE CARDS */
+
+.type-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.type-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  background: #f5f6fa;
+  transition: 0.3s;
+}
+
+.type-card i {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.type-card.active {
+  border: 2px solid #4a6cf7;
+  background: #e9edff;
+}
+
+/* ACTION BUTTONS */
+
+.action-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+}
+
+.action-btn.active {
+  background: linear-gradient(135deg, #4a6cf7, #6a82fb);
+  color: white;
+}
+
+/* INPUT */
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-box input,
+.input-box select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* OPERATOR */
+
+.operator-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* RESULT */
+
+.result-box {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.result-box p {
+  color: #4a6cf7;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .type-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .action-container {
+    flex-direction: column;
+  }
+}
+
+.dashboard-container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #4a6cf7, #6a82fb);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+/* CONTENT */
+.content {
+  padding: 20px;
+}
+
+h4 {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+/* GRID */
+.input-grid {
+  display: grid;
+  /*grid-template-columns: 1fr 50px 1fr;*/
+  grid-template-columns: 1fr 60px 1.3fr; /* right side bigger */
+  gap: 20px;
+  align-items: center;
+}
+
+.input-grid > div:last-child {
+  margin-left: 10px; /* subtle shift right */
+}
+
+.input-grid > div:last-child select {
+  width: 100%;
+  min-width: 180px;
+}
+/* CENTER BUTTON */
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.calculate-btn {
+  background: linear-gradient(135deg, #4a6cf7, #6a82fb);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* ERROR */
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   Result Box Extensions
+   ======================================== */
+
+.result-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 4px 0;
+}
+
+.result-label {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  display: block;
+  margin-top: 4px;
+}
+
+.result-not-equal {
+  border-color: #e74c3c !important;
+}

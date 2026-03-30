@@ -1,0 +1,66 @@
+@import "./variables.css";
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: var(--font-family);
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+/* HEADINGS */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+}
+
+/* BUTTON DEFAULT */
+button {
+  cursor: pointer;
+  font-family: var(--font-family);
+}
+
+/* INPUT DEFAULT */
+input,
+select {
+  font-family: var(--font-family);
+  outline: none;
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* UTILITY CLASSES */
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: var(--spacing-md);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* SCROLL SMOOTH */
+html {
+  scroll-behavior: smooth;
+}

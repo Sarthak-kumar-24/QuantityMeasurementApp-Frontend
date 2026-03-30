@@ -1,0 +1,29 @@
+:root {
+  /*  COLORS */
+  --primary: #4a6cf7;
+  --primary-gradient: linear-gradient(135deg, #4a6cf7, #6a82fb);
+
+  --secondary: #c0392b;
+  --background: #f2f4f8;
+  --card-bg: #ffffff;
+
+  --text-primary: #333;
+  --text-secondary: #777;
+
+  --border: #ddd;
+
+  /*  BUTTON */
+  --btn-radius: 25px;
+
+  /*  CARD */
+  --card-radius: 15px;
+  --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+
+  /*  SPACING */
+  --spacing-sm: 8px;
+  --spacing-md: 15px;
+  --spacing-lg: 25px;
+
+  /*  FONT */
+  --font-family: "Poppins", sans-serif;
+}
