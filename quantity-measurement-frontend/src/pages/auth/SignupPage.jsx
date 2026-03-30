@@ -34,7 +34,6 @@ import useAuth from "../../hooks/useAuth";
  *
  *
  *
- *
  * The Flow Summary
  *
  * User Types: handleChange saves the data to the form state.
