@@ -6,6 +6,12 @@ import "./select.css";
  * - options: An array of strings to be turned into dropdown choices.
  * - onChange: Captures the user selection.
  */
+
+
+
+
+
+
 const SelectBox = ({ label, options = [], value, onChange, name }) => {
   return (
     <div className="select-group">
