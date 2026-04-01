@@ -40,13 +40,14 @@ const authService = {
    * POST /auth/login
    * Maps: email -> username (backend field name)
    **/
+
   login: async (data) => {
     const payload = {
-      username: data.email || data.username,
+      email: data.email,
       password: data.password,
     };
     const res = await apiClient.post("/auth/login", payload);
-    return res.data; // { token: "..." }
+    return res.data;
   },
 
   /**
@@ -56,12 +57,9 @@ const authService = {
    * Backend only needs username + password; fullName & mobile are UI-only
    */
   signup: async (data) => {
-    const payload = {
-      username: data.email || data.username,
-      password: data.password,
-    };
-    const res = await apiClient.post("/auth/register", payload);
-    return res.data; // "User registered successfully!"
+    // Send the entire object received from SignupPage.js
+    const res = await apiClient.post("/auth/register", data);
+    return res.data;
   },
 
   /**
