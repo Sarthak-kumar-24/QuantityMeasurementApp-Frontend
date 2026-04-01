@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import LoginPage from "./LoginPage";
 import SignupPage from "./SignupPage";
 import "../../styles/components/auth.css";
+import logoImage from "../../assets/images/image1.png";
 
 /**
  * This component is a "Tabbed Layout Manager" for authentication.
@@ -50,7 +51,7 @@ const AuthWrapper = () => {
       <div className="auth-box">
         {/* LEFT */}
         <div className="auth-left">
-          <img src="/assets/images/logo.png" alt="logo" />
+          <img src={logoImage} alt="logo" />
           <h2>QuantityMeasurementApp</h2>
         </div>
 

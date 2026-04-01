@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import { GoogleLogin } from "@react-oauth/google";
 
 /**
  * This is the "Login Form" component. It handles user input,
@@ -31,6 +32,7 @@ import useAuth from "../../hooks/useAuth";
  * down from AuthWrapper to slide over to the Signup screen.
  *
  *
+ *
  * The Flow Summary
  *
  * Typing: handleChange updates the form object with every keystroke.
@@ -49,7 +51,7 @@ import useAuth from "../../hooks/useAuth";
  *
  */
 const LoginPage = ({ switchTab }) => {
-  const { login } = useAuth();
+  const { login, googleLogin } = useAuth();
 
   const [form, setForm] = useState({
     email: "",
@@ -63,6 +65,15 @@ const LoginPage = ({ switchTab }) => {
     if (form.password.length < 4)
       return "Password must be at least 4 characters";
     return "";
+  };
+
+  const handleGoogleSuccess = async (credentialResponse) => {
+    try {
+      // credentialResponse.credential IS the idToken
+      await googleLogin(credentialResponse.credential);
+    } catch (err) {
+      setError(typeof err === "string" ? err : "Google login failed.");
+    }
   };
 
   const handleChange = (e) => {
@@ -90,20 +101,25 @@ const LoginPage = ({ switchTab }) => {
         placeholder="Email Id"
         onChange={handleChange}
       />
-
       <input
         type="password"
         name="password"
         placeholder="Password"
         onChange={handleChange}
       />
-
       {error && <p className="error">{error}</p>}
-
       <button className="auth-btn" onClick={handleSubmit}>
         Login
       </button>
-
+      <div
+        style={{ marginTop: "15px", display: "flex", justifyContent: "center" }}
+      >
+        <GoogleLogin
+          onSuccess={handleGoogleSuccess}
+          onError={() => setError("Google Sign-In failed.")}
+        />
+      </div>
+     
       <p className="switch-text">
         Don't have an account? <span onClick={switchTab}>Sign up</span>
       </p>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import { GoogleLogin } from "@react-oauth/google";
 
 /**
  * This is the "Signup Page" component. It collects new user details and sends
@@ -54,27 +55,41 @@ import useAuth from "../../hooks/useAuth";
  *
  */
 const SignupPage = ({ switchTab }) => {
-  const { signup } = useAuth();
+  const { signup, googleLogin } = useAuth();
 
   const [form, setForm] = useState({
-    fullName: "",
+    username: "",
     email: "",
     password: "",
-    mobile: "",
+    phoneNumber: "",
   });
 
   const [error, setError] = useState("");
 
   const validate = () => {
-    if (form.fullName.length < 3) return "Name too short";
+    if (form.username.length < 3) return "Name too short";
     if (!form.email.includes("@")) return "Invalid email";
     if (form.password.length < 4) return "Password must be 4+ chars";
-    if (!/^[6-9]\d{9}$/.test(form.mobile)) return "Invalid mobile number";
+    if (!/^[6-9]\d{9}$/.test(form.phoneNumber)) return "Invalid mobile number";
     return "";
   };
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  // 3. Add the Google success handler
+  const handleGoogleSuccess = async (credentialResponse) => {
+    try {
+      // We can use the same googleLogin hook for signup!
+      // If the backend doesn't find the user, it will create one automatically.
+      await googleLogin(credentialResponse.credential);
+    } catch (err) {
+      setError(
+        typeof err === "string"
+          ? err
+          : "Google signup failed. Please try again.",
+      );
+    }
   };
 
   const handleSubmit = async () => {
@@ -83,7 +98,10 @@ const SignupPage = ({ switchTab }) => {
 
     try {
       setError("");
-      await signup(form);
+      const res = await signup(form);
+      console.log("SUCCESS:", res);
+
+      alert("Signup successful!"); // or redirect
       // On success, navigates to /login (handled in useAuth)
     } catch (err) {
       // err is already a string extracted by useAuth hook
@@ -97,37 +115,42 @@ const SignupPage = ({ switchTab }) => {
     <div className="form-container">
       <input
         type="text"
-        name="fullName"
+        name="username"
         placeholder="Full Name"
         onChange={handleChange}
       />
-
       <input
         type="email"
         name="email"
         placeholder="Email Id"
         onChange={handleChange}
       />
-
       <input
         type="password"
         name="password"
         placeholder="Password"
         onChange={handleChange}
       />
-
       <input
         type="text"
-        name="mobile"
+        name="phoneNumber"
         placeholder="Mobile Number"
         onChange={handleChange}
       />
-
       {error && <p className="error">{error}</p>}
-
       <button className="auth-btn signup" onClick={handleSubmit}>
         Signup
       </button>
+      {/* 4. Replace the old button with the GoogleLogin component */}
+      <div
+        style={{ marginTop: "15px", display: "flex", justifyContent: "center" }}
+      >
+        <GoogleLogin
+          onSuccess={handleGoogleSuccess}
+          onError={() => setError("Google Sign-In failed.")}
+          text="signup_with" // Optional: Changes the button text to "Sign up with Google"
+        />
+      </div>
 
       <p className="switch-text">
         Already have an account? <span onClick={switchTab}>Login</span>
