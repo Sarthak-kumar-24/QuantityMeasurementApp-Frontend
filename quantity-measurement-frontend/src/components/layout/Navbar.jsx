@@ -10,6 +10,7 @@ const Navbar = () => {
     navigate("/login");
   };
 
+  
   return (
     <div className="navbar">
       <button className="logout-btn" onClick={handleLogout}>
